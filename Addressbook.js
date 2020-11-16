@@ -100,7 +100,7 @@ console.log("Data successfully added");
 
 } catch(e){console.error(e);}
 
-let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. exit");
+let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. Search by city or State\n5. exit");
 
 switch(choice){
     case 1:{
@@ -133,6 +133,28 @@ switch(choice){
     case 3:{
         let count=addressbookarray.length;
         console.log("No. of contacts is "+count);
+        break;
+    }
+
+    case 4:{
+        let choice=prompt("want to search by\n1. city\n2. state");
+        switch(choice){
+            case 1:{
+                let city=prompt("enter city");
+                let index= addressbookarray.findIndex(p=>((p.city)===city));
+                if(index==-1)console.log("no such record found");
+                else console.log("Person with given city are present");
+                break;
+            }
+
+            case 2:{
+                let state=prompt("enter state");
+                let index= addressbookarray.findIndex(p=>((p.state)===state));
+                if(index==-1)console.log("no such record found");
+                else console.log("Person with given state are present")
+            }
+        }
+       
     }
 
     
