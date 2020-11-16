@@ -63,7 +63,7 @@ class Addressbook{
     get phone(){return this._phone;}
 
     set email(email){
-        let emailRegex=RegExp('(^[a-zA-Z0-9]{1,})(([\\-\\.]{1})([_a-zA-z0-9]{1,}))*([@]{1})([_a-zA-z0-9]{1,})([\\.]{1})([_a-zA-z0-9]{2,})(([\\.]{1})([a-zA-z]{2}))*$');
+        let emailRegex=RegExp('(^[a-zA-Z0-9]{1,})(([+_\\-\\.]{1})([_a-zA-z0-9]{1,}))*([@]{1})([_a-zA-z0-9]{1,})([\\.]{1})([_a-zA-z0-9]{2,})(([\\.]{1})([a-zA-z]{2}))*$');
        
         // let emailRegex=RegExp('(^[_a-zA-z0-9])(([\\-\\.]{1})([_a-zA-z0-9]))*([@]{1})([_a-zA-z0-9])([\\.]{1})([_a-zA-z0-9]{2,})(([\\.]{1})([a-zA-z]{2}))*')
         if(emailRegex.test(email)) this._email=email;
