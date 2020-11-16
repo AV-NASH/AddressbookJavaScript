@@ -1,3 +1,4 @@
+const prompt=require('prompt-sync')();
 class Addressbook{
     constructor(...param) {
         this.first_name=param[0];
@@ -77,7 +78,19 @@ class Addressbook{
     }
 }
 console.log("Welcome to addressbook");
+let addressbookarray=new Array();
 try{
-let addressbookdata=new Addressbook("Avi","Nash","hyo street","new mexico city","mexico","343 455","91 8987676212","avsd.xyz@1.com.in");
-console.log(addressbookdata.toString());
+let fname=prompt("Enter first name");
+let lname=prompt("Enter last name");
+let address=prompt("Enter address");
+let city=prompt("Enter city");
+let state=prompt("Enter state");
+let zip=prompt("enter zip");
+let phone=prompt("Enter phone number");
+let email=prompt("Enter email");
+addressbookarray.push(new Addressbook(fname,lname,address,city,state,zip,phone,email));
+console.log("Data successfully added");
+let choice=prompt("want to enter more\n1. yes\n2. no");
+
+
 } catch(e){console.error(e);}
