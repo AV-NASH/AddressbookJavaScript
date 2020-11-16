@@ -96,3 +96,25 @@ console.log("Data successfully added");
 }while(choice==1);
 
 } catch(e){console.error(e);}
+
+let choice=prompt("Enter your operation\n1. Edit\n2. exit");
+
+switch(choice){
+    case 1:{
+        let name=prompt("Enter the full name of person to be edited")
+      let index= addressbookarray.findIndex(p=>((p.first_name+" "+p.last_name)===name));
+      console.log("please enter the new data");
+
+      let fname=prompt("Enter first name");
+      let lname=prompt("Enter last name");
+      let address=prompt("Enter address");
+      let city=prompt("Enter city");
+      let state=prompt("Enter state");
+      let zip=prompt("enter zip");
+      let phone=prompt("Enter phone number");
+      let email=prompt("Enter email");
+      let newData=new Addressbook(fname,lname,address,city,state,zip,phone,email);
+      addressbookarray.splice(index,1,newData);
+      console.log("Data successfully modified");
+    }
+}
