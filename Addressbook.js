@@ -143,7 +143,7 @@ switch(choice){
                 let city=prompt("enter city");
                 let index= addressbookarray.findIndex(p=>((p.city)===city));
                 if(index==-1)console.log("no such record found");
-                else console.log("Person with given city are present");
+                else console.log(addressbookarray.filter(p=>p.city===city).forEach(p=>p.toString()));
                 break;
             }
 
@@ -151,9 +151,11 @@ switch(choice){
                 let state=prompt("enter state");
                 let index= addressbookarray.findIndex(p=>((p.state)===state));
                 if(index==-1)console.log("no such record found");
-                else console.log("Person with given state are present")
+                else console.log(addressbookarray.filter(p=>p.state===state).forEach(p=>p.toString()));
+                break;
             }
         }
+        break;
        
     }
 
