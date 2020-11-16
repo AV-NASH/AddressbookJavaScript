@@ -84,6 +84,8 @@ try{
 do{
 let fname=prompt("Enter first name");
 let lname=prompt("Enter last name");
+if((addressbookarray.findIndex(p=>((p.first_name+" "+p.last_name)===name)))==-1) console.log("name already exist");
+else{
 let address=prompt("Enter address");
 let city=prompt("Enter city");
 let state=prompt("Enter state");
@@ -92,6 +94,7 @@ let phone=prompt("Enter phone number");
 let email=prompt("Enter email");
 addressbookarray.push(new Addressbook(fname,lname,address,city,state,zip,phone,email));
 console.log("Data successfully added");
+}
  choice=prompt("want to enter more\n1. yes\n2. no");
 }while(choice==1);
 
