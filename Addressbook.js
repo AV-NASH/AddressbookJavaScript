@@ -97,7 +97,7 @@ console.log("Data successfully added");
 
 } catch(e){console.error(e);}
 
-let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. exit");
+let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. exit");
 
 switch(choice){
     case 1:{
@@ -124,6 +124,12 @@ switch(choice){
         let index= addressbookarray.findIndex(p=>((p.first_name+" "+p.last_name)===name));
         addressbookarray.splice(index,1);
         console.log("data successfully deleted");
+        break;
+    }
+
+    case 3:{
+        let count=addressbookarray.length;
+        console.log("No. of contacts is "+count);
     }
 
     
