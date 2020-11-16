@@ -193,22 +193,79 @@ switch(choice){
     }
 
     case 6:{
-        console.log("List sorted by name is");
-        addressbookarray.sort(compareByName);
+        let choice=prompt("want to sort by\n1. name\n2. city\n3. state\n4. zip");
+        switch(choice){
+            case 1:{ console.log("List sorted by name is");
+            addressbookarray.sort(compareByName);
+            addressbookarray.forEach(p=>console.log(p.toString()));
+            break;
+        }
+
+            case 2:{ console.log("List sorted by city is");
+            addressbookarray.sort(compareByCity);
+            addressbookarray.forEach(p=>console.log(p.toString()));
+            break;
+        }
+
+        case 3:{ console.log("List sorted by state is");
+        addressbookarray.sort(compareByState);
         addressbookarray.forEach(p=>console.log(p.toString()));
+        break;
+    }
+
+     case 4:{ console.log("List sorted by zip is");
+            addressbookarray.sort(compareByZip);
+            addressbookarray.forEach(p=>console.log(p.toString()));
+            break;
+        }
+
+       
 
     }
 
     
 }
-
+}
 function compareByName(contact1,contact2){
     const name1=(contact1.first_name+" "+contact1.last_name).toUpperCase();
-    const name2=(contact1.first_name+" "+contact1.last_name).toUpperCase();
+    const name2=(contact2.first_name+" "+contact2.last_name).toUpperCase();
 
     let compare=0
     if(name1>name2) compare=1;
     else { if(name2>name1) compare=-1;}
+
+    return compare;
+}
+
+function compareByCity(contact1,contact2){
+    const city1=(contact1.city).toUpperCase();
+    const city2=(contact2.city).toUpperCase();
+
+    let compare=0
+    if(city1>city2) compare=1;
+    else { if(city2>city1) compare=-1;}
+
+    return compare;
+}
+
+function compareByState(contact1,contact2){
+    const state1=(contact1.state).toUpperCase();
+    const state2=(contact2.state).toUpperCase();
+
+    let compare=0
+    if(state1>state2) compare=1;
+    else { if(state2>state1) compare=-1;}
+
+    return compare;
+}
+
+function compareByZip(contact1,contact2){
+    const zip1=(contact1.zip);
+    const zip2=(contact2.zip);
+
+    let compare=0
+    if(zip1>zip2) compare=1;
+    else { if(zip2>zip1) compare=-1;}
 
     return compare;
 }
