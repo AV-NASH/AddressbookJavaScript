@@ -80,6 +80,8 @@ class Addressbook{
 console.log("Welcome to addressbook");
 let addressbookarray=new Array();
 try{
+    let choice;
+do{
 let fname=prompt("Enter first name");
 let lname=prompt("Enter last name");
 let address=prompt("Enter address");
@@ -90,7 +92,7 @@ let phone=prompt("Enter phone number");
 let email=prompt("Enter email");
 addressbookarray.push(new Addressbook(fname,lname,address,city,state,zip,phone,email));
 console.log("Data successfully added");
-let choice=prompt("want to enter more\n1. yes\n2. no");
-
+ choice=prompt("want to enter more\n1. yes\n2. no");
+}while(choice==1);
 
 } catch(e){console.error(e);}
