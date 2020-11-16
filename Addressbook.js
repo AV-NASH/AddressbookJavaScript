@@ -100,7 +100,7 @@ console.log("Data successfully added");
 
 } catch(e){console.error(e);}
 
-let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. Search by city or State\n5. Count by city or state\n6. exit");
+let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. Search by city or State\n5. Count by city or state\n6. Sort the addressbook\n7. exit");
 
 switch(choice){
     case 1:{
@@ -192,5 +192,23 @@ switch(choice){
 
     }
 
+    case 6:{
+        console.log("List sorted by name is");
+        addressbookarray.sort(compareByName);
+        addressbookarray.forEach(p=>console.log(p.toString()));
+
+    }
+
     
+}
+
+function compareByName(contact1,contact2){
+    const name1=(contact1.first_name+" "+contact1.last_name).toUpperCase();
+    const name2=(contact1.first_name+" "+contact1.last_name).toUpperCase();
+
+    let compare=0
+    if(name1>name2) compare=1;
+    else { if(name2>name1) compare=-1;}
+
+    return compare;
 }
