@@ -100,7 +100,7 @@ console.log("Data successfully added");
 
 } catch(e){console.error(e);}
 
-let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. Search by city or State\n5. exit");
+let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. Number of contacts\n4. Search by city or State\n5. Count by city or state\n6. exit");
 
 switch(choice){
     case 1:{
@@ -143,7 +143,7 @@ switch(choice){
                 let city=prompt("enter city");
                 let index= addressbookarray.findIndex(p=>((p.city)===city));
                 if(index==-1)console.log("no such record found");
-                else console.log(addressbookarray.filter(p=>p.city===city).forEach(p=>p.toString()));
+                else addressbookarray.filter(p=>p.city===city).forEach(p=>console.log(p.toString()));
                 break;
             }
 
@@ -151,12 +151,45 @@ switch(choice){
                 let state=prompt("enter state");
                 let index= addressbookarray.findIndex(p=>((p.state)===state));
                 if(index==-1)console.log("no such record found");
-                else console.log(addressbookarray.filter(p=>p.state===state).forEach(p=>p.toString()));
+                else addressbookarray.filter(p=>p.state===state).forEach(p=>console.log(p.toString()));
                 break;
             }
         }
         break;
-       
+      
+    }
+
+    case 5:{
+        // let count=0;
+        // addressbookarray.filter(p=>p.state===state).forEach(p=>count+1)
+        let choice=prompt("want to search by\n1. city\n2. state");
+        switch(choice){
+            case 1:{
+                let count=0
+                let city=prompt("enter city");
+                let index= addressbookarray.findIndex(p=>((p.city)===city));
+                if(index==-1)console.log("no such record found");
+                else{ 
+                    addressbookarray.filter(p=>p.city===city).forEach(p=>count++);
+                    console.log("No of contacts is "+count);
+                }
+                break;
+            }
+
+            case 2:{
+                let count=0;
+                let state=prompt("enter state");
+                let index= addressbookarray.findIndex(p=>((p.state)===state));
+                if(index==-1)console.log("no such record found");
+                else{ 
+                    addressbookarray.filter(p=>p.state===state).forEach(p=>count++);
+                    console.log("No of contacts is "+count);
+                }
+                break;
+            }
+        }
+        break;
+
     }
 
     
