@@ -97,7 +97,7 @@ console.log("Data successfully added");
 
 } catch(e){console.error(e);}
 
-let choice=prompt("Enter your operation\n1. Edit\n2. exit");
+let choice=prompt("Enter your operation\n1. Edit\n2. Delete\n3. exit");
 
 switch(choice){
     case 1:{
@@ -116,5 +116,15 @@ switch(choice){
       let newData=new Addressbook(fname,lname,address,city,state,zip,phone,email);
       addressbookarray.splice(index,1,newData);
       console.log("Data successfully modified");
+      break;
     }
+
+    case 2:{
+        let name=prompt("Enter the full name of person to be edited")
+        let index= addressbookarray.findIndex(p=>((p.first_name+" "+p.last_name)===name));
+        addressbookarray.splice(index,1);
+        console.log("data successfully deleted");
+    }
+
+    
 }
